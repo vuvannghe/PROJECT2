@@ -1,0 +1,365 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2024 21:55:57[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000d000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=34218h (213528) map[0m
+[0;32mI (182) esp_image: segment 1: paddr=00044240 vaddr=3ffb0000 size=03e74h ( 15988) load[0m
+[0;32mI (188) esp_image: segment 2: paddr=000480bc vaddr=40080000 size=07f5ch ( 32604) load[0m
+[0;32mI (202) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=e77ech (948204) map[0m
+[0;32mI (545) esp_image: segment 4: paddr=00137814 vaddr=40087f5c size=0faach ( 64172) load[0m
+[0;32mI (584) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (584) boot: Disabling RNG early entropy source...[0m
+[0;32mI (595) cpu_start: Multicore app[0m
+[0;32mI (596) cpu_start: Pro cpu up.[0m
+[0;32mI (596) cpu_start: Starting app cpu, entry point is 0x400814c4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (616) cpu_start: Pro cpu start user code[0m
+[0;32mI (616) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (616) cpu_start: Application information:[0m
+[0;32mI (620) cpu_start: Project name:     PROJECT2[0m
+[0;32mI (625) cpu_start: App version:      1[0m
+[0;32mI (630) cpu_start: Compile time:     Nov 29 2024 16:34:19[0m
+[0;32mI (636) cpu_start: ELF file SHA256:  2c6cf3aae21044a6...[0m
+[0;32mI (642) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (647) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (652) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (657) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (662) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (669) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (675) heap_init: At 3FFC6EC0 len 00019140 (100 KiB): DRAM[0m
+[0;32mI (681) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (687) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (694) heap_init: At 40097A08 len 000085F8 (33 KiB): IRAM[0m
+[0;32mI (702) spi_flash: detected chip: generic[0m
+[0;32mI (705) spi_flash: flash io: dio[0m
+[0;32mI (710) app_start: Starting scheduler on CPU0[0m
+[0;32mI (714) app_start: Starting scheduler on CPU1[0m
+[0;32mI (714) main_task: Started on CPU0[0m
+[0;32mI (724) main_task: Calling app_main()[0m
+[0;32mI (754) app_main: Initialize SD card with SPI interface.[0m
+[0;32mI (754) sdcard_initialize: Initializing SD card[0m
+[0;32mI (754) sdcard_initialize: Using SPI peripheral[0m
+[0;32mI (764) sdcard_initialize: Mounting filesystem[0m
+[0;32mI (764) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (774) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (824) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;32mI (844) sdcard_initialize: SDCard has been initialized.[0m
+[0;32mI (844) sdcard_initialize: Filesystem mounted[0m
+[0;32mI (844) sdcard_initialize: SDCard properties.[0m
+Name: SD16G
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 3840MB
+CSD: ver=2, sector_size=512, capacity=7864320 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1204) SD CARD: Scaning file system to find .bmp images successfully. 9 image found[0m
+[0;32mI (1204) LCD TFT: Turn off LCD backlight[0m
+[0;32mI (1204) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1214) LCD TFT: Initialize SPI bus[0m
+[0;32mI (1224) LCD TFT: Install panel IO[0m
+[0;32mI (1224) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1234) LCD TFT: Install ILI9341 panel driver[0m
+[0;32mI (1234) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1244) ili9341: LCD panel create success, version: 2.0.0[0m
+[0;32mI (1374) LCD TFT: Turn on LCD backlight[0m
+[0;32mI (1374) LCD TFT: Initialize LVGL library[0m
+[0;32mI (1374) LCD TFT: Register display driver to LVGL[0m
+[0;32mI (1384) LCD TFT: Install LVGL tick timer[0m
+[0;32mI (1384) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1384) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1394) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1404) gpio: GPIO[34]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+I (1424) wifi:wifi driver task: 3ffdde40, prio:23, stack:6656, core=0
+I (1444) wifi:wifi firmware version: 91b9630
+I (1444) wifi:wifi certification version: v7.0
+I (1444) wifi:config NVS flash: enabled
+I (1444) wifi:config nano formating: disabled
+I (1444) wifi:Init data frame dynamic rx buffer num: 32
+I (1454) wifi:Init static rx mgmt buffer num: 5
+I (1454) wifi:Init management short buffer num: 32
+I (1464) wifi:Init dynamic tx buffer num: 32
+I (1464) wifi:Init static rx buffer size: 1600
+I (1464) wifi:Init static rx buffer num: 10
+I (1474) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1474) wifi_init: rx ba win: 6[0m
+[0;32mI (1484) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1484) wifi_init: udp mbox: 6[0m
+[0;32mI (1484) wifi_init: tcp mbox: 6[0m
+[0;32mI (1494) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1494) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1504) wifi_init: tcp mss: 1440[0m
+[0;32mI (1504) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1514) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1514) phy_init: phy_version 4780,16b31a7,Sep 22 2023,20:42:16[0m
+I (1604) wifi:mode : sta (ec:64:c9:91:b2:40)
+I (1604) wifi:enable tsf
+[0;32mI (1614) main_task: Returned from app_main()[0m
+I (1664) smartconfig: SC version: V3.0.1
+I (6504) wifi:ic_enable_sniffer
+I (6504) smartconfig: Start to find channel...
+[0;32mI (6504) SMART CONFIG: Scan done[0m
+I (16984) smartconfig: TYPE: ESPTOUCH
+I (16984) smartconfig: T|AP MAC: b0:be:76:49:ec:54
+I (16984) smartconfig: Found channel on 1-1. Start to get ssid and password...
+[0;32mI (16994) SMART CONFIG: Found channel[0m
+I (17164) smartconfig: TYPE: ESPTOUCH
+I (17164) smartconfig: Found channel on 1-1. Start to get ssid and password...
+[0;32mI (17164) SMART CONFIG: Found channel[0m
+I (20764) smartconfig: F|pswd: Wicom123
+I (20764) smartconfig: F|ssid: WICOM
+I (20764) wifi:ic_disable_sniffer
+[0;32mI (20764) SMART CONFIG: Got SSID and password[0m
+[0;32mI (20764) SMART CONFIG: SSID:WICOM[0m
+[0;32mI (20764) SMART CONFIG: PASSWORD:Wicom123[0m
+I (20794) wifi:new:<1,1>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1
+I (20794) wifi:state: init -> auth (b0)
+I (20804) wifi:state: auth -> assoc (0)
+I (20814) wifi:state: assoc -> run (10)
+W (20914) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (20914) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (21144) wifi:connected with WICOM, aid = 4, channel 1, 40U, bssid = b0:be:76:49:ec:54
+I (21144) wifi:security: WPA2-PSK, phy: bgn, rssi: -69
+I (21154) wifi:pm start, type: 1
+
+I (21234) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (21244) wifi:<ba-add>idx:0 (ifx:0, b0:be:76:49:ec:54), tid:0, ssn:4, winSize:64
+[0;32mI (22654) esp_netif_handlers: sta ip: 192.168.0.106, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (22654) Main: The Device got an IP successfully[0m
+[0;32mI (22654) Main: AP MAC ADDRESS: B0:BE:76:49:EC:54[0m
+[0;32mI (42404) Main: A:YOR.bmp[0m
+[0;32mI (44414) Main: A:VUTEST.bmp[0m
+[0;32mI (47334) Main: A:YOR.bmp[0m
+[0;32mI (48244) Main: A:ANYAYA.bmp[0m
+[0;32mI (49374) Main: A:ANYAKHOC.bmp[0m
+[Warn]	(48.020, +48020)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.022, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.030, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.052, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.052, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.060, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.082, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.082, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.092, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.114, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.116, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.124, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.144, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.146, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.154, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.174, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.176, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.184, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.204, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.204, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.214, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.234, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.236, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.244, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.264, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.264, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.274, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.294, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.294, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.302, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.326, +24)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.326, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.334, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.356, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.356, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.364, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.386, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.386, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.394, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.418, +24)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.420, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.428, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.448, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.450, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.458, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(48.478, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(48.478, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(48.488, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[0;32mI (53494) Main: A:ANYA.bmp[0m
+[0;32mI (55864) Main: A:ANYAKHOC.bmp[0m
+[Warn]	(54.504, +6016)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.506, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.514, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.536, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.536, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.544, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.570, +26)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.570, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.580, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.600, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.600, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.610, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.630, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.630, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.638, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.660, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.662, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.670, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.692, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.692, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.700, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.720, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.722, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.730, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.750, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.752, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.760, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.782, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.782, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.790, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.812, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.812, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.820, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.842, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.842, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.850, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.874, +24)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.874, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.882, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.904, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.904, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.914, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.934, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.934, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.942, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(54.964, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(54.964, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(54.972, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[0;32mI (67864) Main: A:ANYAYA.bmp[0m
+[0;32mI (68814) Main: A:YOR.bmp[0m
+[0;32mI (69704) Main: A:VUTEST.bmp[0m
+[0;32mI (70934) Main: A:ANYASUP.bmp[0m
+[0;32mI (73694) Main: A:ANYACRY.bmp[0m
+[0;32mI (76974) Main: A:ANYABA.bmp[0m
+[0;32mI (78684) Main: A:ANYAHI.bmp[0m
+[0;32mI (80094) Main: A:ANYA.bmp[0m
+[0;32mI (82934) Main: A:ANYAHI.bmp[0m
+[0;32mI (84934) Main: A:ANYA.bmp[0m
+[0;32mI (89454) Main: A:ANYAKHOC.bmp[0m
+[Warn]	(88.096, +33124)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.096, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.106, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.128, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.128, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.136, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.160, +24)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.162, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.170, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.190, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.192, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.200, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.220, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.222, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.230, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.252, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.252, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.260, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.282, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.282, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.292, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.312, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.312, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.322, +10)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.342, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.342, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.350, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.372, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.374, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.382, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.402, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.404, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.412, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.432, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.432, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.440, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.464, +24)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.466, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.474, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.496, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.496, +0)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.504, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.524, +20)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.526, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.534, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+[Warn]	(88.556, +22)	 decoder_open: LV_COLOR_DEPTH == 16 but bpp is 24 (should be 16) 	(in lv_bmp.c line #160)
+[Warn]	(88.558, +2)	 _lv_img_cache_open: Image draw cannot open the image resource 	(in lv_img_cache.c line #125)
+[Warn]	(88.566, +8)	 lv_draw_img: Image draw error 	(in lv_draw_img.c line #84)
+I (6494) wifi:ic_enable_sniffer
+I (6494) smartconfig: Start to find channel...
+[0;32mI (6494) SMART CONFIG: Scan done[0m
+I (12374) smartconfig: TYPE: ESPTOUCH
+I (12374) smartconfig: T|AP MAC: b0:be:76:49:ec:54
+I (12374) smartconfig: Found channel on 1-1. Start to get ssid and password...
+[0;32mI (12374) SMART CONFIG: Found channel[0m
+I (17194) smartconfig: TYPE: ESPTOUCH
+I (17194) smartconfig: Found channel on 1-1. Start to get ssid and password...
+[0;32mI (17194) SMART CONFIG: Found channel[0m
+I (28494) smartconfig: F|pswd: Wicom123
+I (28494) smartconfig: F|ssid: WICOM
+I (28494) wifi:ic_disable_sniffer
+[0;32mI (28494) SMART CONFIG: Got SSID and password[0m
+[0;32mI (28504) SMART CONFIG: SSID:WICOM[0m
+[0;32mI (28504) SMART CONFIG: PASSWORD:Wicom123[0m
+I (28524) wifi:new:<1,1>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1
+I (28524) wifi:state: init -> auth (b0)
+I (28524) wifi:state: auth -> assoc (0)
+I (28544) wifi:state: assoc -> run (10)
+W (28554) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (28554) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (28664) wifi:connected with WICOM, aid = 4, channel 1, 40U, bssid = b0:be:76:49:ec:54
+I (28664) wifi:security: WPA2-PSK, phy: bgn, rssi: -81
+I (28664) wifi:pm start, type: 1
+
+I (28694) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (28714) wifi:<ba-add>idx:0 (ifx:0, b0:be:76:49:ec:54), tid:0, ssn:2, winSize:64
+[0;32mI (30174) esp_netif_handlers: sta ip: 192.168.0.106, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (30174) Main: The Device got an IP successfully[0m
+[0;32mI (30174) Main: AP MAC ADDRESS: B0:BE:76:49:EC:54[0m
+[0;32mI (37024) Main: A:YOR.bmp[0m
+[0;32mI (40684) Main: A:ANYAYA.bmp[0m
+[0;32mI (43084) Main: A:ANYA.bmp[0m
+[0;32mI (49604) Main: A:ANYAHI.bmp[0m
+[0;32mI (50934) Main: A:ANYABA.bmp[0m
+[0;32mI (52084) Main: A:ANYACRY.bmp[0m
+[0;32mI (53174) Main: A:ANYASUP.bmp[0m
+[0;32mI (54604) Main: A:VUTEST.bmp[0m
+[0;32mI (55594) Main: A:YOR.bmp[0m
+[0;32mI (155414) Main: HTTP GET Status = 200, content_length = 153738[0m
+[0;32mI (155414) Main: Get filename successfully, filename = anyawow.bmp[0m
+[0;32mI (172254) BMP: Download the new image 'anyawow.bmp' successfully. Total bytes read: 153738[0m
+[0;32mI (172254) Main: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (179924) Main: A:ANYAYA.bmp[0m
+[0;32mI (181044) Main: A:ANYA.bmp[0m
+[0;32mI (182424) Main: A:ANYAHI.bmp[0m
+[0;32mI (183734) Main: A:ANYABA.bmp[0m
+[0;32mI (189824) Main: A:ANYACRY.bmp[0m
+[0;32mI (190914) Main: A:ANYASUP.bmp[0m
+[0;32mI (193824) Main: A:VUTEST.bmp[0m
+[0;32mI (195494) Main: A:.bmp[0m
+[0;32mI (195714) Main: A:YOR.bmp[0m

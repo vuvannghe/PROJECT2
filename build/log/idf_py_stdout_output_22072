@@ -1,0 +1,186 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2024 21:55:57[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000d000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=34228h (213544) map[0m
+[0;32mI (182) esp_image: segment 1: paddr=00044250 vaddr=3ffb0000 size=03e74h ( 15988) load[0m
+[0;32mI (188) esp_image: segment 2: paddr=000480cc vaddr=40080000 size=07f4ch ( 32588) load[0m
+[0;32mI (202) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=e7830h (948272) map[0m
+[0;32mI (545) esp_image: segment 4: paddr=00137858 vaddr=40087f4c size=0fabch ( 64188) load[0m
+[0;32mI (584) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (584) boot: Disabling RNG early entropy source...[0m
+[0;32mI (595) cpu_start: Multicore app[0m
+[0;32mI (596) cpu_start: Pro cpu up.[0m
+[0;32mI (596) cpu_start: Starting app cpu, entry point is 0x400814c4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (616) cpu_start: Pro cpu start user code[0m
+[0;32mI (616) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (616) cpu_start: Application information:[0m
+[0;32mI (620) cpu_start: Project name:     PROJECT2[0m
+[0;32mI (626) cpu_start: App version:      1[0m
+[0;32mI (630) cpu_start: Compile time:     Nov 29 2024 22:14:36[0m
+[0;32mI (636) cpu_start: ELF file SHA256:  e3e4b3e3efb542d4...[0m
+[0;32mI (642) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (647) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (652) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (657) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (662) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (669) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (675) heap_init: At 3FFC6EC0 len 00019140 (100 KiB): DRAM[0m
+[0;32mI (681) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (687) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (694) heap_init: At 40097A08 len 000085F8 (33 KiB): IRAM[0m
+[0;32mI (702) spi_flash: detected chip: generic[0m
+[0;32mI (705) spi_flash: flash io: dio[0m
+[0;32mI (710) app_start: Starting scheduler on CPU0[0m
+[0;32mI (714) app_start: Starting scheduler on CPU1[0m
+[0;32mI (714) main_task: Started on CPU0[0m
+[0;32mI (724) main_task: Calling app_main()[0m
+[0;32mI (754) app_main: Initialize SD card with SPI interface.[0m
+[0;32mI (754) sdcard_initialize: Initializing SD card[0m
+[0;32mI (754) sdcard_initialize: Using SPI peripheral[0m
+[0;32mI (764) sdcard_initialize: Mounting filesystem[0m
+[0;32mI (764) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (774) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (824) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;32mI (844) sdcard_initialize: SDCard has been initialized.[0m
+[0;32mI (844) sdcard_initialize: Filesystem mounted[0m
+[0;32mI (844) sdcard_initialize: SDCard properties.[0m
+Name: SD16G
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 3840MB
+CSD: ver=2, sector_size=512, capacity=7864320 read_bl_len=9
+SSR: bus_width=1
+7   8[0;32mI (994) SD CARD: Scaning file system to find .bmp images successfully. 8 image found[0m
+[0;32mI (994) LCD TFT: Turn off LCD backlight[0m
+[0;32mI (994) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1004) LCD TFT: Initialize SPI bus[0m
+[0;32mI (1014) LCD TFT: Install panel IO[0m
+[0;32mI (1014) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1024) LCD TFT: Install ILI9341 panel driver[0m
+[0;32mI (1024) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1034) ili9341: LCD panel create success, version: 2.0.0[0m
+[0;32mI (1164) LCD TFT: Turn on LCD backlight[0m
+[0;32mI (1164) LCD TFT: Initialize LVGL library[0m
+[0;32mI (1164) LCD TFT: Register display driver to LVGL[0m
+[0;32mI (1174) LCD TFT: Install LVGL tick timer[0m
+[0;32mI (1174) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1174) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1184) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1194) gpio: GPIO[34]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+I (1214) wifi:wifi driver task: 3ffdde40, prio:23, stack:6656, core=0
+I (1234) wifi:wifi firmware version: 91b9630
+I (1234) wifi:wifi certification version: v7.0
+I (1234) wifi:config NVS flash: enabled
+I (1234) wifi:config nano formating: disabled
+I (1234) wifi:Init data frame dynamic rx buffer num: 32
+I (1244) wifi:Init static rx mgmt buffer num: 5
+I (1244) wifi:Init management short buffer num: 32
+I (1254) wifi:Init dynamic tx buffer num: 32
+I (1254) wifi:Init static rx buffer size: 1600
+I (1254) wifi:Init static rx buffer num: 10
+I (1264) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1264) wifi_init: rx ba win: 6[0m
+[0;32mI (1274) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1274) wifi_init: udp mbox: 6[0m
+[0;32mI (1274) wifi_init: tcp mbox: 6[0m
+[0;32mI (1284) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1284) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1294) wifi_init: tcp mss: 1440[0m
+[0;32mI (1294) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1304) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1304) phy_init: phy_version 4780,16b31a7,Sep 22 2023,20:42:16[0m
+I (1394) wifi:mode : sta (ec:64:c9:91:b2:40)
+I (1394) wifi:enable tsf
+[0;32mI (1404) main_task: Returned from app_main()[0m
+I (1454) smartconfig: SC version: V3.0.1
+I (6294) wifi:ic_enable_sniffer
+I (6294) smartconfig: Start to find channel...
+[0;32mI (6294) SMART CONFIG: Scan done[0m
+I (9234) smartconfig: TYPE: ESPTOUCH
+I (9234) smartconfig: Found channel on 10-0. Start to get ssid and password...
+[0;32mI (9234) SMART CONFIG: Found channel[0m
+I (9244) smartconfig: TYPE: ESPTOUCH
+I (9244) smartconfig: T|AP MAC: 34:e8:94:f6:aa:d7
+I (12534) smartconfig: F|pswd: 0983069689
+I (12534) smartconfig: F|ssid: Hoang Vu 3
+I (12534) wifi:ic_disable_sniffer
+[0;32mI (12534) SMART CONFIG: Got SSID and password[0m
+[0;32mI (12544) SMART CONFIG: SSID:Hoang Vu 3[0m
+[0;32mI (12544) SMART CONFIG: PASSWORD:0983069689[0m
+I (12564) wifi:new:<10,2>, old:<10,2>, ap:<255,255>, sta:<10,2>, prof:1
+I (12564) wifi:state: init -> auth (b0)
+I (12584) wifi:state: auth -> assoc (0)
+I (12594) wifi:state: assoc -> run (10)
+I (12604) wifi:connected with Hoang Vu 3, aid = 5, channel 10, 40D, bssid = 34:e8:94:f6:aa:d7
+I (12604) wifi:security: WPA2-PSK, phy: bgn, rssi: -54
+I (12614) wifi:pm start, type: 1
+
+I (12614) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (12624) wifi:<ba-add>idx:0 (ifx:0, 34:e8:94:f6:aa:d7), tid:0, ssn:0, winSize:64
+[0;32mI (13624) esp_netif_handlers: sta ip: 192.168.3.104, mask: 255.255.255.0, gw: 192.168.3.3[0m
+[0;32mI (13624) Main: The Device got an IP successfully[0m
+[0;32mI (13624) Main: AP MAC ADDRESS: 34:E8:94:F6:AA:D7[0m
+0
+[0;32mI (20864) Main: A:ANYAYA.bmp[0m
+1
+[0;32mI (23284) Main: A:ANYA.bmp[0m
+2
+[0;32mI (25134) Main: A:ANYAHI.bmp[0m
+3
+[0;32mI (26854) Main: A:ANYABA.bmp[0m
+4
+[0;32mI (28534) Main: A:ANYACRY.bmp[0m
+5
+[0;32mI (30844) Main: A:ANYASUP.bmp[0m
+6
+[0;32mI (34694) Main: A:VUTEST.bmp[0m
+7
+[0;32mI (36584) Main: A:.bmp[0m
+0
+[0;32mI (36804) Main: A:ANYAYA.bmp[0m
+[0;32mI (83524) Main: A:.bmp[0m
+[0;32mI (83724) Main: A:VUTEST.bmp[0m
+7
+[0;32mI (90124) Main: A:.bmp[0m
+0
+[0;32mI (90324) Main: A:ANYAYA.bmp[0m
+1
+[0;32mI (99604) Main: A:ANYA.bmp[0m
+2
+[0;32mI (100604) Main: A:ANYAHI.bmp[0m
+3
+[0;32mI (101794) Main: A:ANYABA.bmp[0m
+4
+[0;32mI (102814) Main: A:ANYACRY.bmp[0m
+5
+[0;32mI (104184) Main: A:ANYASUP.bmp[0m
+6
+[0;32mI (106084) Main: A:VUTEST.bmp[0m
+7
+[0;32mI (164624) Main: A:.bmp[0m
+0
+[0;32mI (164814) Main: A:ANYAYA.bmp[0m

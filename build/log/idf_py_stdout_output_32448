@@ -1,0 +1,144 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2024 21:55:57[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000d000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=34218h (213528) map[0m
+[0;32mI (182) esp_image: segment 1: paddr=00044240 vaddr=3ffb0000 size=03e74h ( 15988) load[0m
+[0;32mI (188) esp_image: segment 2: paddr=000480bc vaddr=40080000 size=07f5ch ( 32604) load[0m
+[0;32mI (202) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=e77f8h (948216) map[0m
+[0;32mI (545) esp_image: segment 4: paddr=00137820 vaddr=40087f5c size=0faach ( 64172) load[0m
+[0;32mI (584) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (584) boot: Disabling RNG early entropy source...[0m
+[0;32mI (595) cpu_start: Multicore app[0m
+[0;32mI (596) cpu_start: Pro cpu up.[0m
+[0;32mI (596) cpu_start: Starting app cpu, entry point is 0x400814c4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (616) cpu_start: Pro cpu start user code[0m
+[0;32mI (616) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (616) cpu_start: Application information:[0m
+[0;32mI (620) cpu_start: Project name:     PROJECT2[0m
+[0;32mI (625) cpu_start: App version:      1[0m
+[0;32mI (630) cpu_start: Compile time:     Nov 29 2024 16:14:51[0m
+[0;32mI (636) cpu_start: ELF file SHA256:  1fffb5598ccf90bb...[0m
+[0;32mI (642) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (647) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (652) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (657) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (662) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (669) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (675) heap_init: At 3FFC6EC0 len 00019140 (100 KiB): DRAM[0m
+[0;32mI (681) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (687) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (694) heap_init: At 40097A08 len 000085F8 (33 KiB): IRAM[0m
+[0;32mI (702) spi_flash: detected chip: generic[0m
+[0;32mI (705) spi_flash: flash io: dio[0m
+[0;32mI (710) app_start: Starting scheduler on CPU0[0m
+[0;32mI (714) app_start: Starting scheduler on CPU1[0m
+[0;32mI (714) main_task: Started on CPU0[0m
+[0;32mI (724) main_task: Calling app_main()[0m
+[0;32mI (754) app_main: Initialize SD card with SPI interface.[0m
+[0;32mI (754) sdcard_initialize: Initializing SD card[0m
+[0;32mI (754) sdcard_initialize: Using SPI peripheral[0m
+[0;32mI (764) sdcard_initialize: Mounting filesystem[0m
+[0;32mI (764) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (814) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;32mI (884) sdcard_initialize: SDCard has been initialized.[0m
+[0;32mI (884) sdcard_initialize: Filesystem mounted[0m
+[0;32mI (884) sdcard_initialize: SDCard properties.[0m
+Name: SD16G
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 3840MB
+CSD: ver=2, sector_size=512, capacity=7864320 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1244) SD CARD: Scaning file system to find .bmp images successfully. 8 image found[0m
+[0;32mI (1244) LCD TFT: Turn off LCD backlight[0m
+[0;32mI (1244) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1254) LCD TFT: Initialize SPI bus[0m
+[0;32mI (1254) LCD TFT: Install panel IO[0m
+[0;32mI (1264) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1274) LCD TFT: Install ILI9341 panel driver[0m
+[0;32mI (1274) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1284) ili9341: LCD panel create success, version: 2.0.0[0m
+[0;32mI (1414) LCD TFT: Turn on LCD backlight[0m
+[0;32mI (1414) LCD TFT: Initialize LVGL library[0m
+[0;32mI (1414) LCD TFT: Register display driver to LVGL[0m
+[0;32mI (1424) LCD TFT: Install LVGL tick timer[0m
+[0;32mI (1424) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (1424) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;31mE (1434) gpio: gpio_install_isr_service(499): GPIO isr service already installed[0m
+[0;32mI (1444) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;31mE (1454) gpio: gpio_install_isr_service(499): GPIO isr service already installed[0m
+[0;32mI (1464) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;31mE (1474) gpio: gpio_install_isr_service(499): GPIO isr service already installed[0m
+I (1494) wifi:wifi driver task: 3ffdde40, prio:23, stack:6656, core=0
+I (1504) wifi:wifi firmware version: 91b9630
+I (1504) wifi:wifi certification version: v7.0
+I (1504) wifi:config NVS flash: enabled
+I (1504) wifi:config nano formating: disabled
+I (1514) wifi:Init data frame dynamic rx buffer num: 32
+I (1514) wifi:Init static rx mgmt buffer num: 5
+I (1524) wifi:Init management short buffer num: 32
+I (1524) wifi:Init dynamic tx buffer num: 32
+I (1534) wifi:Init static rx buffer size: 1600
+I (1534) wifi:Init static rx buffer num: 10
+I (1534) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1544) wifi_init: rx ba win: 6[0m
+[0;32mI (1544) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1554) wifi_init: udp mbox: 6[0m
+[0;32mI (1554) wifi_init: tcp mbox: 6[0m
+[0;32mI (1554) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1564) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1564) wifi_init: tcp mss: 1440[0m
+[0;32mI (1574) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1574) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1584) phy_init: phy_version 4780,16b31a7,Sep 22 2023,20:42:16[0m
+I (1674) wifi:mode : sta (ec:64:c9:91:b2:40)
+I (1674) wifi:enable tsf
+[0;32mI (1674) main_task: Returned from app_main()[0m
+I (1734) smartconfig: SC version: V3.0.1
+I (6574) wifi:ic_enable_sniffer
+I (6574) smartconfig: Start to find channel...
+[0;32mI (6574) SMART CONFIG: Scan done[0m
+[0;32mI (17904) Main: A:YOR.bmp[0m
+[0;32mI (23204) Main: A:ANYAYA.bmp[0m
+[0;32mI (24144) Main: A:ANYA.bmp[0m
+[0;32mI (30044) Main: A:ANYAHI.bmp[0m
+[0;32mI (31214) Main: A:ANYABA.bmp[0m
+[0;32mI (32444) Main: A:ANYACRY.bmp[0m
+[0;32mI (33624) Main: A:ANYASUP.bmp[0m
+[0;32mI (35254) Main: A:VUTEST.bmp[0m
+[0;32mI (89334) Main: A:YOR.bmp[0m
+[0;32mI (90574) Main: A:ANYAYA.bmp[0m
+[0;32mI (91654) Main: A:ANYA.bmp[0m
+[0;32mI (92754) Main: A:ANYAHI.bmp[0m
+[0;32mI (95694) Main: A:ANYABA.bmp[0m
+[0;32mI (98114) Main: A:ANYACRY.bmp[0m
+[0;32mI (99224) Main: A:ANYASUP.bmp[0m
+[0;32mI (100524) Main: A:VUTEST.bmp[0m
+[0;32mI (101864) Main: A:YOR.bmp[0m
+[0;32mI (102954) Main: A:ANYAYA.bmp[0m
+[0;32mI (103944) Main: A:ANYA.bmp[0m
+[0;32mI (105064) Main: A:ANYAHI.bmp[0m
