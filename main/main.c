@@ -86,7 +86,9 @@ extern void image_file_display(char *image_path);
 #define MAX_HTTP_RECV_BUFFER 512
 #define MAX_HTTP_OUTPUT_BUFFER 2048
 static const char *IMG_TAG = "HTTP_CLIENT";
+
 /*-----------------------------------BUTTON INTERRUPT HANDLER----------------------------------------- */
+
 void IRAM_ATTR img_forward_display_button_handler(void *arg)
 {
     if (forward == false)
