@@ -87,8 +87,24 @@ extern void image_file_display(char *image_path);
 #define MAX_HTTP_OUTPUT_BUFFER 2048
 static const char *IMG_TAG = "HTTP_CLIENT";
 
+#define IMG_ALREADY_EXSISTS 1
+#define IMG_FAILED_TO_WRITE 2
+#define IMG_FILE_FAILED_TO_OPEN_TO_WRITE 3
+#define IMG_FILE_DOWNLOADED_SUCCESSFULLY 4
+#define FAILED_TO_CONNECT_TO_SERVER 5
+#define IMG_DOWNLOADING 6
+extern void wifi_state_display(bool wifi_state);
+extern void sdcard_state_display(bool sdcard_state);
+extern void display_image_dowload_state(uint8_t download_state_code);
+extern void lvgl_timer_handle_task(void *param);
 /*-----------------------------------BUTTON INTERRUPT HANDLER----------------------------------------- */
 
+/**
+ * @brief This function is a button interrupt handler, when forward button is pressed
+ *        it will trigger the image show task to show the next image.
+ *
+ * @param arg Not used in this function.
+ */
 void IRAM_ATTR img_forward_display_button_handler(void *arg)
 {
     if (forward == false)
@@ -308,6 +324,8 @@ static void download_image(void)
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
     // GET
+    display_image_dowload_state(IMG_DOWNLOADING);
+    // vTaskDelay(1000 / portTICK_PERIOD_MS);
     esp_err_t err = esp_http_client_open(client, 0);
     char *response_header = (char *)malloc(369 * sizeof(char));
     if (err == ESP_OK)
@@ -328,12 +346,14 @@ static void download_image(void)
                 if (sdcard_check_exsisting_file(pathFile) == true)
                 {
                     ESP_LOGI("FILE_CHECK", "File '%s' exsists, stop downloading the image", pathFile);
+                    display_image_dowload_state(IMG_ALREADY_EXSISTS);
                     goto end;
                 }
                 FILE *image_file = fopen(pathFile, "wb");
                 if (image_file == NULL)
                 {
                     ESP_LOGE(TAG, "Failed to open file %s for writing", pathFile);
+                    display_image_dowload_state(IMG_FILE_FAILED_TO_OPEN_TO_WRITE);
                     goto end;
                 }
 
@@ -347,6 +367,7 @@ static void download_image(void)
                     if (fwrite(buffer, 1, data_read, image_file) < data_read)
                     {
                         ESP_LOGI("FILE_CHECK", "Downloading the new image encounters an error. Stop downloading");
+                        display_image_dowload_state(IMG_FAILED_TO_WRITE);
                         if (remove(pathFile) != 0)
                         {
                             ESP_LOGE(__func__, "Remove %s failed", pathFile);
@@ -360,7 +381,7 @@ static void download_image(void)
                 }
                 fclose(image_file);
                 ESP_LOGI("BMP", "Download the new image '%s' successfully. Total bytes read: %d", image_name, total_bytes_read);
-
+                display_image_dowload_state(IMG_FILE_DOWNLOADED_SUCCESSFULLY);
                 char *ext = strchr(image_name, '.');
                 *ext = '\0';
                 image_count++;
@@ -382,11 +403,13 @@ static void download_image(void)
     else
     {
         ESP_LOGE(TAG, "HTTP GET request failed: %s", esp_err_to_name(err));
+        display_image_dowload_state(FAILED_TO_CONNECT_TO_SERVER);
     }
 
 end:
     free(response_header);
     esp_http_client_cleanup(client);
+    vTaskDelay(3000 / portTICK_PERIOD_MS);
 }
 
 /**
@@ -490,6 +513,7 @@ static void Wifi_event_handler(void *arg, esp_event_base_t event_base,
         }
         case WIFI_EVENT_STA_DISCONNECTED:
         {
+            wifi_state_display(false);
             if (is_connected == true)
             {
                 is_connected = false;
@@ -564,6 +588,7 @@ static void Wifi_event_handler(void *arg, esp_event_base_t event_base,
         {
             if (event_id == IP_EVENT_STA_GOT_IP)
             {
+                wifi_state_display(true);
                 ESP_LOGI(TAG, "The Device got an IP successfully");
                 attemp_count = 0;
                 attemp_count_1 = 0;
@@ -806,12 +831,24 @@ void app_main(void)
 
     sdmmc_card_t SDCARD;
     esp_err_t sd_err = sdcard_initialize(&mount_config_t, &SDCARD, &host_t, &spi_bus_config_t_1, &slot_config);
+
     ESP_ERROR_CHECK_WITHOUT_ABORT(sd_err);
     scan_bmp_images(mount_point);
-    //-----------------------------//
+
     // Initialize LCD TFT (LVGL drivers)
     ili9341_init(&lcd_mainscreen);
     ui_project2_init(lcd_mainscreen);
+
+    if (sd_err != ESP_OK)
+    {
+        sdcard_state_display(false);
+    }
+    else
+    {
+        sdcard_state_display(true);
+    }
+
+    //-----------------------------//
 
     // SmartConfig button
     gpio_config_t smart_cfg_button =
@@ -868,5 +905,6 @@ void app_main(void)
     SyncSemaphore = xSemaphoreCreateMutex();
 
     xTaskCreate(&image_show_handler, "Image display task", 10 * 1024, NULL, 10, NULL);
+    xTaskCreate(&lvgl_timer_handle_task, "LVGL timer handle task", 10 * 1024, NULL, 5, NULL);
     WIFI_init(); // Initialize Wifi in station mode with Smart Config
 }
