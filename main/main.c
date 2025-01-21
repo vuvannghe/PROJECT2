@@ -101,6 +101,12 @@ void IRAM_ATTR img_forward_display_button_handler(void *arg)
     }
 }
 
+/**
+ * @brief This function is a button interrupt handler, when backward button is pressed
+ *        it will trigger the image show task to show the previous image.
+ *
+ * @param arg Not used in this function.
+ */
 void IRAM_ATTR img_backward_display_button_handler(void *arg)
 {
     if (backward == false)
@@ -112,7 +118,18 @@ void IRAM_ATTR img_backward_display_button_handler(void *arg)
         portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
     }
 }
+
 bool is_downloading = false;
+/**
+ * @brief Interrupt handler for the image download button.
+ *
+ * This function is triggered when the image download button is pressed. It checks
+ * if the device is connected to Wi-Fi and not currently downloading. If both conditions are
+ * met, it gives the semaphore to trigger the image download task from an ISR context.
+ *
+ * @param arg Unused parameter.
+ */
+
 void IRAM_ATTR img_download_button_handler(void *arg)
 {
     if ((is_connected == true))
@@ -266,6 +283,15 @@ bool sdcard_check_exsisting_file(const char *filepath)
     return (stat(filepath, &buffer) == 0);
 }
 
+/**
+ * @brief Download a new image from the server and save to SD card.
+ *
+ *        If the image is already existed in SD card, it will stop downloading.
+ *
+ *        If failed to download, it will remove the incomplete image file from SD card.
+ *
+ * @note  This function is non-block because it is called in a task.
+ */
 static void download_image(void)
 {
     char local_response_buffer[MAX_HTTP_OUTPUT_BUFFER] = {0};
@@ -363,6 +389,17 @@ end:
     esp_http_client_cleanup(client);
 }
 
+/**
+ * @brief Task to handle downloading images from the server and saving them to the SD card.
+ *
+ * This task waits for the xImageDownloadSemaphore to be available, indicating a request to download an image.
+ * Once the semaphore is taken, it also takes the SyncSemaphore to ensure synchronization during the download process.
+ * The task sets the is_downloading flag to true, invokes the download_image function to perform the download,
+ * and then sets the is_downloading flag back to false after completion. It releases the SyncSemaphore afterwards.
+ *
+ * @param pvParameters Pointer to the task parameters (not used in this task).
+ */
+
 static void image_download_task(void *pvParameters)
 {
     for (;;)
@@ -381,6 +418,19 @@ static void image_download_task(void *pvParameters)
 }
 
 /*------------------------------------ WIFI ------------------------------------ */
+
+/**
+ * @brief Interrupt handler for the smart config button.
+ *
+ * This function is triggered when the smart config button is pressed.
+ * It checks if the system is connected to a network, and if so, it
+ * gives the xSmartConfigSemaphore from an interrupt service routine
+ * to signal the smart config process, yielding from the ISR if a
+ * higher priority task was woken.
+ *
+ * @param arg Not used in this function.
+ */
+
 void IRAM_ATTR smart_cfg_button_handler(void *arg)
 {
 
@@ -394,6 +444,15 @@ void IRAM_ATTR smart_cfg_button_handler(void *arg)
     }
 }
 
+/**
+ * @brief Smart config task
+ *
+ * This task is an infinite loop that waits for the xSmartConfigSemaphore to be given.
+ * When it is given, it changes the AP by disconnecting the current connection, stopping
+ * the previous smart config process, and starting a new smart config process.
+ *
+ * @param parm Not used in this function.
+ */
 static void smartconfig_itr_handler(void *parm)
 {
     for (;;)
@@ -660,6 +719,18 @@ esp_err_t scan_bmp_images(const char *base_path)
     return ESP_OK;
 }
 /*-------------------------------------LVGL--------------------------------------- */
+
+/**
+ * @brief Task to display .bmp images stored in SD card.
+ *
+ * This task waits for the xImageShowSemaphore to be given, and then it displays the
+ * next or previous image in the image list based on the forward and backward
+ * flags. If the forward flag is true, it shows the next image, and if the backward
+ * flag is true, it shows the previous image. The image is displayed in the
+ * lv_scr_act() screen.
+ *
+ * @param parm Not used in this function.
+ */
 static void image_show_handler(void *parm)
 {
     int img_index = -1;
