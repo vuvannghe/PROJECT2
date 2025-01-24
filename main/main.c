@@ -145,7 +145,6 @@ bool is_downloading = false;
  *
  * @param arg Unused parameter.
  */
-
 void IRAM_ATTR img_download_button_handler(void *arg)
 {
     if ((is_connected == true))
@@ -672,7 +671,6 @@ static void Wifi_event_handler(void *arg, esp_event_base_t event_base,
                 {
                     esp_smartconfig_stop();
                     change_AP = false;
-
                     break;
                 }
                 default:
